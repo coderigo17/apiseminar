@@ -1,4 +1,4 @@
-import json, os, requests, xmltodict
+import json, os, requests, webbrowser, xmltodict
 
 def main():
     # Submit a GET request to api
@@ -18,7 +18,9 @@ def main():
 
     # Convert OrderedDict to JSON and print out info nicely
     json_data = json.dumps(res_dict, indent=4, separators=(',', ': '))
-    print(json_data)
+
+    # Retrieve url and open in chrome
+    webbrowser.get('/usr/bin/google-chrome %s').open(json.loads(json_data)['response']['data']['images']['image'][0]['url'])
 
 if __name__ == '__main__':
     main()
