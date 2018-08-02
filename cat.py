@@ -16,7 +16,7 @@ def main():
     # Convert XML data to OrderedDict
     res_dict = xmltodict.parse(xml_data)
 
-    # Convert OrderedDict to JSON and print out info
+    # Convert OrderedDict to JSON and print out info nicely
     json_data = json.dumps(res_dict, indent=4, separators=(',', ': '))
     print(json_data)
 
